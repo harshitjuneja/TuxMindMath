@@ -12,7 +12,7 @@ var one, two, three, four, five, six, seven, eight, nine, mul, zero, equalto, qu
 var bubble1, ins1, ins, tux, gameQues;
 var t, test, s, o, level = 1;
 var mul_prob, five_prob, zero_prob, equalto_prob, ques_prob;
-var i0, i1, i2, i3, i4, i5, i6, i7, i8, i9;
+var i0=[], i1=[], i2=[], i3=[], i4=[], i5=[], i6=[], i7=[], i8=[], i9=[];
 var a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0,j=0,k=0;
 var x, y, count = 0,
     coll_d;
@@ -239,13 +239,18 @@ function input_create() {
 function add0() {
     if (count > 0) {
         x += 80;
-        i0 = game.add.sprite(x, y, '0');
+        i0[a] = game.add.sprite(x, y, '0');
+        console.log(i0[a]);
 
-    } else i0 = game.add.sprite(x, y, '0');
+    } else i0[a] = game.add.sprite(x, y, '0');
+    
+        
+    
 
     usrAns[count] = 0;
     count++;
     a++;
+    console.log(" 0 kitne : "+ a);
 }
 
 function add1() {
@@ -253,12 +258,13 @@ function add1() {
 
     if (count > 0) {
         x += 80;
-        i1 = game.add.sprite(x, y, '1');
-    } else i1 = game.add.sprite(x, y, '1');
+        i1[b] = game.add.sprite(x, y, '1');
+    } else i1[b] = game.add.sprite(x, y, '1');
 
     usrAns[count] = 1;
     count++;
     b++;
+     console.log(" 1 kitne : "+ b);
 }
 
 function add2() {
@@ -266,90 +272,98 @@ function add2() {
 
     if (count > 0) {
         x += 80;
-        i2 = game.add.sprite(x, y, '2');
-    } else i2 = game.add.sprite(x, y, '2');
+        i2[c] = game.add.sprite(x, y, '2');
+    } else i2[c] = game.add.sprite(x, y, '2');
 
     usrAns[count] = 2;
     count++;
     c++;
+    console.log(" 2 kitne : "+ c);
 }
 
 function add3() {
     if (count > 0) {
         x += 80;
-        i3 = game.add.sprite(x, y, '3');
-    } else i3 = game.add.sprite(x, y, '3');
+        i3[d] = game.add.sprite(x, y, '3');
+    } else i3[d] = game.add.sprite(x, y, '3');
 
     usrAns[count] = 3;
     count++;
     d++;
-
+     console.log(" 3 kitne : "+ d);
 }
 
 function add4() {
     if (count > 0) {
         x += 80;
-        i4 = game.add.sprite(x, y, '4');
-    } else i4 = game.add.sprite(x, y, '4');
+        i4[e] = game.add.sprite(x, y, '4');
+    } else i4[e] = game.add.sprite(x, y, '4');
 
     usrAns[count] = 4;
     count++;
     e++;
+     console.log(" 4 kitne : "+ e);
 }
 
 function add5() {
     if (count > 0) {
         x += 80;
-        i5 = game.add.sprite(x, y, '5');
-    } else i5 = game.add.sprite(x, y, '5');
+        i5[f] = game.add.sprite(x, y, '5');
+    } else i5[f] = game.add.sprite(x, y, '5');
 
     usrAns[count] = 5;
     count++;
     f++;
+     console.log(" 5 kitne : "+ f);
 }
 
 function add6() {
     if (count > 0) {
         x += 80;
-        i6 = game.add.sprite(x, y, '6');
-    } else i6 = game.add.sprite(x, y, '6');
+        i6[g] = game.add.sprite(x, y, '6');
+    } else i6[g] = game.add.sprite(x, y, '6');
 
     usrAns[count] = 6;
     count++;
     g++;
+     console.log(" 6 kitne : "+ g);
 }
 
 function add7() {
     if (count > 0) {
         x += 80;
-        i7 = game.add.sprite(x, y, '7');
-    } else i7 = game.add.sprite(x, y, '7');
+        i7[h] = game.add.sprite(x, y, '7');
+    } else i7[h] = game.add.sprite(x, y, '7');
 
     usrAns[count] = 7;
     count++;
     h++;
+     console.log(" 7 kitne : "+ h);
 }
 
 function add8() {
     if (count > 0) {
         x += 80;
-        i8 = game.add.sprite(x, y, '8');
-    } else i8 = game.add.sprite(x, y, '8');
+        i8[j] = game.add.sprite(x, y, '8');
+    } else i8[j] = game.add.sprite(x, y, '8');
 
     usrAns[count] = 8;
     count++;
+     console.log(" 8 kitne : "+ j);
     j++;
 }
 
 function add9() {
     if (count > 0) {
         x += 80;
-        i9 = game.add.sprite(x, y, '9');
-    } else i9 = game.add.sprite(x, y, '9');
+        i9[k] = game.add.sprite(x, y, '9');
+    } else i9[k] = game.add.sprite(x, y, '9');
 
     usrAns[count] = 9;
     count++;
     k++;
+    console.log(" 9 kitne : "+ k);
+    
 }
 
 function check_ans() {
@@ -477,44 +491,44 @@ function remaining_life() {
     equalto_prob.kill();
     ques_prob.kill();
     if(a>0){
-        for(var i=0;i<a;i++)
-        i0.kill();
+        for(var i=0;i<a;i++) i0[i].kill();
+        
     }
     if(b>0){
         for(var i=0;i<b;i++)
-        i1.kill();
+        i1[i].kill();
     }
     if(c>0){
         for(var i=0;i<c;i++)
-        i2.kill();
+        i2[i].kill();
     }
     if(d>0){
         for(var i=0;i<d;i++)
-        i3.kill();
+        i3[i].kill();
     }
     if(e>0){
         for(var i=0;i<e;i++)
-        i4.kill();
+        i4[i].kill();
     }
     if(f>0){
         for(var i=0;i<f;i++)
-        i5.kill();
+        i5[i].kill();
     }
     if(g>0){
         for(var i=0;i<g;i++)
-        i6.kill();
+        i6[i].kill();
     }
     if(h>0){
         for(var i=0;i<h;i++)
-        i7.kill();
+        i7[i].kill();
     }
     if(j>0){
         for(var i=0;i<j;i++)
-        i8.kill();
+        i8[i].kill();
     }
     if(k>0){
         for(var i=0;i<k;i++)
-        i9.kill();
+        i9[i].kill();
     }
    
         gameBegins();
